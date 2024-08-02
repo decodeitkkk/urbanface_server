@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/global.css">
+    <title>Wardrobe Designs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+        body {
+            margin: 0;
+            background: #15151e;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+     <!-- Preloader -->
+     <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <div class="text-center">
+            <div class="relative w-64 h-2 bg-gray-700 rounded-full overflow-hidden mb-4">
+                <div id="preloader-bar" class="absolute left-0 top-0 h-full bg-yellow-500"></div>
+            </div>
+            <div id="preloader-text" class="text-white text-lg">0%</div>
+        </div>
+    </div>
+
+
+    <section id="product"></section>
+    <section id="whatsapp-floating-icon"></section>
+
+
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/Footer.js"></script>
+    <script src="/Components/whatsappFloatingIcon.js"></script>
+
+    <!-- GSAP Animation scripts -->
+    <script src="/media/JS/gsap.min.js"></script>
+    <script src="/media/JS/ScrollTrigger.min.js"></script>
+    <script src="/global.js"></script>
+    <script src="/Components/product.js"></script>
+    <script>
+        let img = [
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677718/wardrobe-01_olkgpb_dlatd3.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677716/wardrobe-02_x7g1ra_ivmwe4.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677715/wardrobe-03_ai1aat_vexqgn.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677714/wardrobe-04_aqxd8h_wfnspx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677713/wardrobe-05_lyr3iv_wbklxb.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677711/wardrobe-06_u2efog_tfx137.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677709/wardrobe-07_tcfprt_xoirbj.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677708/wardrobe-08_f6whwj_jcnyf5.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677707/wardrobe-09_xihj2n_vjazl7.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677705/wardrobe-10_e8pawj_yyfyqj.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677703/wardrobe-11_aplskw_sym1d9.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677702/wardrobe-12_qckryv_zuenht.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677699/wardrobe-13_nejkuk_fi86b8.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677699/wardrobe-14_dg0xtk_oohjza.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677697/wardrobe-15_tetaz1_rri8sr.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677695/wardrobe-16_eup0cg_umskpe.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677694/wardrobe-17_oaxmqq_fts0ps.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677693/wardrobe-18_atvign_kvp2zl.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677691/wardrobe-19_gjvzck_fw09sa.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677689/wardrobe-20_xvbjww_xv9z4i.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677688/wardrobe-21_xxewca_nzfv3m.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677686/wardrobe-22_dt5ocp_asacax.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677684/wardrobe-23_gf7cvb_pgtz0s.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677683/wardrobe-24_fp12md_l0tyvg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677681/wardrobe-25_mtdrfb_n5zcby.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677680/wardrobe-26_ic68su_nmrcsn.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677679/wardrobe-27_z1guct_xidwjg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677677/wardrobe-28_itrwch_vklcxs.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677675/wardrobe-29_pppes7_r85niq.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677673/wardrobe-30_vswl0o_ztugzm.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677672/wardrobe-31_mfdac0_ddedtx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677671/wardrobe-32_kxakl7_pakuxb.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677669/wardrobe-33_hjtzqs_pjlzeh.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677668/wardrobe-34_ke6oru_mfj06t.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677666/wardrobe-35_xdzk8x_ifdagk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677664/wardrobe-36_dqqhvv_eyed2h.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677663/wardrobe-37_dug5c9_c31kmr.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677661/wardrobe-38_ageexj_xgtsxu.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677660/wardrobe-39_mjduca_cjyrmq.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677658/wardrobe-40_uteavs_o9uuqw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677657/wardrobe-41_quvptg_fsawuv.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677655/wardrobe-42_gfpw4l_uft6ck.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677654/wardrobe-43_vrxqfo_youuqy.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677652/wardrobe-44_gemtte_wunrlx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677651/wardrobe-45_ltzdkt_wpkz3t.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677649/wardrobe-46_whnpay_nzlxmx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677648/wardrobe-47_grqncj_v8czl4.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677646/wardrobe-48_hmndem_ndq7vb.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677644/wardrobe-49_zuvobv_iaixfx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677643/wardrobe-50_vyunkq_cv77h6.jpg",
+        ];
+        let product = document.getElementById("product")
+
+        // ---------------------------< Component called
+        product.insertAdjacentHTML("afterbegin", Product(
+            "Elegant Wardrobe Gallery",
+            " Discover the Exquisite Luxury of Our Premium Designs ",
+            img))
+
+        // ---------------------------< GSAP Animation Code 
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let delayValue = () => {
+                return window.innerWidth < 768 ? 0 : 2;
+            };
+            let prtl = gsap.timeline()
+            prtl.from("#product-title, #product-desc, #product-scroll-down", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.4,
+                delay: delayValue,
+                toggleActions: "play reverse play reverse",
+            })
+
+
+
+            const races = document.querySelector(".races");
+            console.log(races.offsetWidth, window.innerWidth);
+
+            function getScrollAmount() {
+                let racesWidth = races.scrollWidth;
+                return -(racesWidth - window.innerWidth);
+            }
+            let sa = getScrollAmount();
+            // console.log(races.scrollwidth, sa)
+            const tween = gsap.to(races, {
+                x: getScrollAmount,
+                duration: 3,
+                ease: "none",
+                onUpdate: ScrollTrigger.update, // Ensure smooth updates
+            });
+
+            let startValue = () => {
+                return window.innerWidth < 768 ? "top 30%" : "top 15%";
+            };
+
+            ScrollTrigger.create({
+                trigger: ".racesWrapper",
+                start: startValue,
+                end: () => `-=${getScrollAmount()}`,
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                markers: false,
+            });
+            // Refresh ScrollTrigger and GSAP on resize for better responsiveness
+            window.addEventListener("resize", () => {
+                ScrollTrigger.refresh();
+            });
+
+
+ // Simulate loading process
+ let progress = 0;
+        const preloaderBar = document.getElementById("preloader-bar");
+        const preloaderText = document.getElementById("preloader-text");
+        const preloader = document.getElementById("preloader");
+
+        function updatePreloader() {
+            progress += Math.random() * 10; // Increment progress randomly
+
+            if (progress >= 100) {
+                progress = 100;
+                setTimeout(() => {
+                    preloader.style.display = "none"; // Hide preloader when loading is complete
+                }, 500); // Slight delay to allow users to see 100%
+            }
+
+            preloaderBar.style.width = `${progress}%`;
+            preloaderText.innerText = `${Math.floor(progress)}%`;
+
+            if (progress < 100) {
+                requestAnimationFrame(updatePreloader);
+            }
+        }
+
+        // Start preloader animation
+        requestAnimationFrame(updatePreloader);
+        })
+    </script>
+
+
+</body>
+
+</html>

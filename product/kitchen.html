@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/global.css">
+    <title>Kitchen Designs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+        body {
+            margin: 0;
+            background: #15151e;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+     <!-- Preloader -->
+     <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <div class="text-center">
+            <div class="relative w-64 h-2 bg-gray-700 rounded-full overflow-hidden mb-4">
+                <div id="preloader-bar" class="absolute left-0 top-0 h-full bg-yellow-500"></div>
+            </div>
+            <div id="preloader-text" class="text-white text-lg">0%</div>
+        </div>
+    </div>
+
+
+    <section id="product"></section>
+    <section id="whatsapp-floating-icon"></section>
+
+
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/Footer.js"></script>
+    <script src="/Components/whatsappFloatingIcon.js"></script>
+
+    <!-- GSAP Animation scripts -->
+    <script src="/media/JS/gsap.min.js"></script>
+    <script src="/media/JS/ScrollTrigger.min.js"></script>
+    <script src="/global.js"></script>
+    <script src="/Components/product.js"></script>
+    <script>
+        let img = [
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676961/kitchen-01_ht5ty6_oeduiu.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676959/kitchen-02_lbpah1_h2dqap.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676958/kitchen-03_busnkb_zgt9ey.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676957/kitchen-04_xh6mnk_b43pyn.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676955/kitchen-05_rekghr_zxagdo.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676954/kitchen-06_nq83yc_tbequh.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676952/kitchen-07_ldnmon_okalki.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676951/kitchen-08_ck117u_h3h1mq.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676949/kitchen-09_p35efs_kk6cfa.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676948/kitchen-10_cdzgvh_sxcrcx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676947/kitchen-11_mxspcu_mvy6hp.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676945/kitchen-12_qrz1nc_mftkj9.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676944/kitchen-13_y1ljig_an9qij.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676942/kitchen-14_n1nomi_qs04nk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676941/kitchen-15_spbtbv_mqflys.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676940/kitchen-16_vlzvuo_jgihqw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676938/kitchen-17_g7cuch_fh1j4x.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676937/kitchen-18_bygnbv_ynft0k.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676936/kitchen-19_dmmmhh_audxe7.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676934/kitchen-20_chhgpp_ojpm8u.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676932/kitchen-21_xofayp_b0n7hr.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676931/kitchen-22_syaefq_kvyg3j.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676930/kitchen-23_rslwme_mdi8ka.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676928/kitchen-24_vfn5pn_zc3wpi.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676926/kitchen-25_vh85j5_kmrgrv.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676925/kitchen-26_rtfemy_oyx4p4.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676923/kitchen-27_bdwz3p_e5ly5d.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676921/kitchen-28_italzj_uljpxy.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676919/kitchen-29_corp5k_jcxt8c.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676918/kitchen-30_ie6g5f_wkipv5.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676917/kitchen-31_oybkkq_h5sm0r.jpg",
+
+        ];
+        let product = document.getElementById("product")
+
+        // ---------------------------< Component called
+        product.insertAdjacentHTML("afterbegin", Product(
+            "Elegant Kitchen Gallery",
+            " Discover the Exquisite Luxury of Our Premium Designs ",
+            img))
+
+        // ---------------------------< GSAP Animation Code 
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let delayValue = () => {
+                return window.innerWidth < 768 ? 0 : 2;
+            };
+            let prtl = gsap.timeline()
+            prtl.from("#product-title, #product-desc, #product-scroll-down", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.4,
+                delay: delayValue,
+                toggleActions: "play reverse play reverse",
+            })
+
+
+
+            const races = document.querySelector(".races");
+            console.log(races.offsetWidth, window.innerWidth);
+
+            function getScrollAmount() {
+                let racesWidth = races.scrollWidth;
+                return -(racesWidth - window.innerWidth);
+            }
+            let sa = getScrollAmount();
+            // console.log(races.scrollwidth, sa)
+            const tween = gsap.to(races, {
+                x: getScrollAmount,
+                duration: 3,
+                ease: "none",
+                onUpdate: ScrollTrigger.update, // Ensure smooth updates
+            });
+
+            let startValue = () => {
+                return window.innerWidth < 768 ? "top 30%" : "top 15%";
+            };
+
+            ScrollTrigger.create({
+                trigger: ".racesWrapper",
+                start: startValue,
+                end: () => `-=${getScrollAmount()}`,
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                markers: false,
+            });
+            // Refresh ScrollTrigger and GSAP on resize for better responsiveness
+            window.addEventListener("resize", () => {
+                ScrollTrigger.refresh();
+            });
+
+ // Simulate loading process
+ let progress = 0;
+        const preloaderBar = document.getElementById("preloader-bar");
+        const preloaderText = document.getElementById("preloader-text");
+        const preloader = document.getElementById("preloader");
+
+        function updatePreloader() {
+            progress += Math.random() * 10; // Increment progress randomly
+
+            if (progress >= 100) {
+                progress = 100;
+                setTimeout(() => {
+                    preloader.style.display = "none"; // Hide preloader when loading is complete
+                }, 500); // Slight delay to allow users to see 100%
+            }
+
+            preloaderBar.style.width = `${progress}%`;
+            preloaderText.innerText = `${Math.floor(progress)}%`;
+
+            if (progress < 100) {
+                requestAnimationFrame(updatePreloader);
+            }
+        }
+
+        // Start preloader animation
+        requestAnimationFrame(updatePreloader);
+        })
+    </script>
+
+
+</body>
+
+</html>

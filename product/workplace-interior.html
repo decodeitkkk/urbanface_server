@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/global.css">
+    <title>Workplace Interior Designs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+        body {
+            margin: 0;
+            background: #15151e;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <div class="text-center">
+            <div class="relative w-64 h-2 bg-gray-700 rounded-full overflow-hidden mb-4">
+                <div id="preloader-bar" class="absolute left-0 top-0 h-full bg-yellow-500"></div>
+            </div>
+            <div id="preloader-text" class="text-white text-lg">0%</div>
+        </div>
+    </div>
+
+
+    <section id="product"></section>
+    <section id="whatsapp-floating-icon"></section>
+
+
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/Footer.js"></script>
+    <script src="/Components/whatsappFloatingIcon.js"></script>
+
+    <!-- GSAP Animation scripts -->
+    <script src="/media/JS/gsap.min.js"></script>
+    <script src="/media/JS/ScrollTrigger.min.js"></script>
+    <script src="/global.js"></script>
+    <script src="/Components/product.js"></script>
+    <script>
+        let img = [
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676157/office-01_a5awwk_dre2oz.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676156/office-02_egaumf_gwcxdo.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676156/office-03_tjikdm_eg1o2e.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676155/office-04_rd5pl4_bku2mk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676154/office-05_mop3uz_um6iyu.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676153/office-06_csahly_pf5y4g.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676152/office-07_nr1axb_xughwq.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676152/office-08_yd8pzw_vkqz8k.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676150/office-09_cg7dlc_cvstf2.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676149/office-1_nvgvqb_dlisn2.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676148/office-10_tjci9i_fxcliy.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676147/office-11_e92fhn_afrgjb.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676147/office-12_qgrrsv_nyyrvv.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676146/office-13_bzs1d1_jndzbd.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676145/office-14_oaheaq_cujlg2.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676144/office-15_bhixux_os7x0x.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676142/office-16_bqy0os_veqjst.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676142/office-17_dysbfp_euiggj.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676140/office-18_c2a2iy_sgnka8.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676140/office-19_yowgvo_kkpbk8.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676139/office-20_ppwxih_purquf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676138/office-21_vqaf5v_kl0ps5.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676137/office-22_zksfrt_sazt1x.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676136/office-23_kmug26_ye4iex.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676135/office-24_azivkh_wdpx39.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676135/office-25_jnajua_uxpe44.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676133/office-26_azcin4_dq3nbi.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676132/office-27_riuztg_nispwv.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676131/office-28_hjbzdg_qs3ljh.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676129/office-29_ogwdaz_asrjda.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676129/office-30_pjhwln_v1v417.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676128/office-31_ifnfry_f2omju.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676127/office-32_bgjkep_qh5wpo.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676126/office-33_mouydo_sesnmg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676125/office-34_zay7tx_tavb3i.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676124/office-35_kqz7on_q65xxp.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676124/office-36_ccgqbo_uiuvng.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676122/office-37_dbmfxd_ghnqov.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676122/office-38_nvynph_aslozf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676121/office-39_blmbtc_axyhmt.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676120/office-40_xcelwp_pfeheq.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676119/office-41_e4yspp_cu2den.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676118/office-42_nle3ld_j8kodc.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676117/office-43_okrmuy_wc9mlv.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676116/office-44_rzctfa_racfzs.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676113/office-45_qr4znv_hgh1tg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676112/office-46_zlp7gy_dtqj2r.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676111/office-47_s3cikt_azzhgl.jpg",
+        ];
+        let product = document.getElementById("product")
+
+
+
+        // ---------------------------< GSAP Animation Code 
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // ---------------------------< Component called
+            product.insertAdjacentHTML("afterbegin", Product(
+                "Elegant Workplace Interior Gallery",
+                " Discover the Exquisite Luxury of Our Premium Designs ",
+                img))
+
+            let delayValue = () => {
+                return window.innerWidth < 768 ? 0 : 2;
+            };
+            let prtl = gsap.timeline()
+            prtl.from("#product-title, #product-desc, #product-scroll-down", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.4,
+                delay: delayValue,
+                toggleActions: "play reverse play reverse",
+            })
+
+
+
+            const races = document.querySelector(".races");
+            console.log(races.offsetWidth, window.innerWidth);
+
+            function getScrollAmount() {
+                let racesWidth = races.scrollWidth;
+                return -(racesWidth - window.innerWidth);
+            }
+            let sa = getScrollAmount();
+            // console.log(races.scrollwidth, sa)
+            const tween = gsap.to(races, {
+                x: getScrollAmount,
+                duration: 3,
+                ease: "none",
+                onUpdate: ScrollTrigger.update, // Ensure smooth updates
+            });
+
+            let startValue = () => {
+                return window.innerWidth < 768 ? "top 30%" : "top 15%";
+            };
+
+            ScrollTrigger.create({
+                trigger: ".racesWrapper",
+                start: startValue,
+                end: () => `-=${getScrollAmount()}`,
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                markers: false,
+            });
+            // Refresh ScrollTrigger and GSAP on resize for better responsiveness
+            window.addEventListener("resize", () => {
+                ScrollTrigger.refresh();
+            });
+
+
+            // Simulate loading process
+            let progress = 0;
+            const preloaderBar = document.getElementById("preloader-bar");
+            const preloaderText = document.getElementById("preloader-text");
+            const preloader = document.getElementById("preloader");
+
+            function updatePreloader() {
+                progress += Math.random() * 10; // Increment progress randomly
+
+                if (progress >= 100) {
+                    progress = 100;
+                    setTimeout(() => {
+                        preloader.style.display = "none"; // Hide preloader when loading is complete
+                    }, 500); // Slight delay to allow users to see 100%
+                }
+
+                preloaderBar.style.width = `${progress}%`;
+                preloaderText.innerText = `${Math.floor(progress)}%`;
+
+                if (progress < 100) {
+                    requestAnimationFrame(updatePreloader);
+                }
+            }
+
+            // Start preloader animation
+            requestAnimationFrame(updatePreloader);
+        })
+    </script>
+
+
+</body>
+
+</html>

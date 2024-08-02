@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/global.css">
+    <title>Living Room Designs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+        body {
+            margin: 0;
+            background: #15151e;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+     <!-- Preloader -->
+     <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <div class="text-center">
+            <div class="relative w-64 h-2 bg-gray-700 rounded-full overflow-hidden mb-4">
+                <div id="preloader-bar" class="absolute left-0 top-0 h-full bg-yellow-500"></div>
+            </div>
+            <div id="preloader-text" class="text-white text-lg">0%</div>
+        </div>
+    </div>
+
+
+    <section id="product"></section>
+    <section id="whatsapp-floating-icon"></section>
+
+
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/Footer.js"></script>
+    <script src="/Components/whatsappFloatingIcon.js"></script>
+
+    <!-- GSAP Animation scripts -->
+    <script src="/media/JS/gsap.min.js"></script>
+    <script src="/media/JS/ScrollTrigger.min.js"></script>
+    <script src="/global.js"></script>
+    <script src="/Components/product.js"></script>
+    <script>
+        let img = [
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677052/living-room-01_o2lr41_gkmcba.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677051/living-room-02_ia2b0r_fsmpqq.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677049/living-room-03_lncd9h_k0n9ph.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677048/living-room-04_gb7ori_hr2lfm.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677046/living-room-05_uyw4lc_dfehfo.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677045/living-room-06_wfwggd_x8u04f.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677043/living-room-07_hxygwg_rch60v.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677041/living-room-08_vvs2yt_dpsqli.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677039/living-room-09_famb74_tg92jk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677038/living-room-10_wtv70f_giy6fj.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677037/living-room-11_a1e2lz_ff4its.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677034/living-room-12_xefwsa_utr9vo.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677033/living-room-13_w48jlr_b4r9ye.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677031/living-room-14_h0chkq_tfvh72.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677030/living-room-15_lcudnl_xasbuf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677028/living-room-16_ohtf0b_vrmhqn.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677026/living-room-17_grov4k_yu2y3b.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677024/living-room-18_zekrgg_dovlta.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677023/living-room-19_paqy1s_zm9dnk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677021/living-room-20_xn9ix6_phard3.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677020/living-room-21_edumnp_ahxbrw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677018/living-room-22_ax72bb_yf0z9s.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677017/living-room-23_x25z1f_cnsdlf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677015/living-room-24_exu3vs_dtxa4q.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677013/living-room-26_klllab_qj1uak.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677012/living-room-27_szsyss_s3pmfc.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677011/living-room-28_lmqoej_juticz.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677008/living-room-29_mcexvy_abgrtr.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677007/living-room-30_afn1qf_z8brlk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677005/living-room-31_zeik1k_quo1dk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677004/living-room-32_tjazyo_kdd8jg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677002/living-room-33_pgjnfr_luysqe.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677001/living-room-34_jxkosr_a4mfm6.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676999/living-room-35_uqhy5f_mqvp8z.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676997/living-room-37_d9j2oq_svn8zx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676996/living-room-38_yosypn_i7blpy.jpg",
+        ];
+        let product = document.getElementById("product")
+
+        // ---------------------------< Component called
+        product.insertAdjacentHTML("afterbegin", Product(
+            "Elegant Living Room Gallery",
+            " Discover the Exquisite Luxury of Our Premium Designs ",
+            img))
+
+        // ---------------------------< GSAP Animation Code 
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let delayValue = () => {
+                return window.innerWidth < 768 ? 0 : 2;
+            };
+            let prtl = gsap.timeline()
+            prtl.from("#product-title, #product-desc, #product-scroll-down", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.4,
+                delay: delayValue,
+                toggleActions: "play reverse play reverse",
+            })
+
+
+
+            const races = document.querySelector(".races");
+            console.log(races.offsetWidth, window.innerWidth);
+
+            function getScrollAmount() {
+                let racesWidth = races.scrollWidth;
+                return -(racesWidth - window.innerWidth);
+            }
+            let sa = getScrollAmount();
+            // console.log(races.scrollwidth, sa)
+            const tween = gsap.to(races, {
+                x: getScrollAmount,
+                duration: 3,
+                ease: "none",
+                onUpdate: ScrollTrigger.update, // Ensure smooth updates
+            });
+
+            let startValue = () => {
+                return window.innerWidth < 768 ? "top 30%" : "top 15%";
+            };
+
+            ScrollTrigger.create({
+                trigger: ".racesWrapper",
+                start: startValue,
+                end: () => `-=${getScrollAmount()}`,
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                markers: false,
+            });
+            // Refresh ScrollTrigger and GSAP on resize for better responsiveness
+            window.addEventListener("resize", () => {
+                ScrollTrigger.refresh();
+            });
+
+
+ // Simulate loading process
+ let progress = 0;
+        const preloaderBar = document.getElementById("preloader-bar");
+        const preloaderText = document.getElementById("preloader-text");
+        const preloader = document.getElementById("preloader");
+
+        function updatePreloader() {
+            progress += Math.random() * 10; // Increment progress randomly
+
+            if (progress >= 100) {
+                progress = 100;
+                setTimeout(() => {
+                    preloader.style.display = "none"; // Hide preloader when loading is complete
+                }, 500); // Slight delay to allow users to see 100%
+            }
+
+            preloaderBar.style.width = `${progress}%`;
+            preloaderText.innerText = `${Math.floor(progress)}%`;
+
+            if (progress < 100) {
+                requestAnimationFrame(updatePreloader);
+            }
+        }
+
+        // Start preloader animation
+        requestAnimationFrame(updatePreloader);
+        })
+    </script>
+
+
+</body>
+
+</html>

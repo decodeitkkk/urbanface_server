@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/global.css">
+    <title>Bathroom Designs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+        body {
+            margin: 0;
+            background: #15151e;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+     <!-- Preloader -->
+     <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <div class="text-center">
+            <div class="relative w-64 h-2 bg-gray-700 rounded-full overflow-hidden mb-4">
+                <div id="preloader-bar" class="absolute left-0 top-0 h-full bg-yellow-500"></div>
+            </div>
+            <div id="preloader-text" class="text-white text-lg">0%</div>
+        </div>
+    </div>
+
+
+
+    <section id="product"></section>
+    <section id="whatsapp-floating-icon"></section>
+
+
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/Footer.js"></script>
+    <script src="/Components/whatsappFloatingIcon.js"></script>
+
+    <!-- GSAP Animation scripts -->
+    <script src="/media/JS/gsap.min.js"></script>
+    <script src="/media/JS/ScrollTrigger.min.js"></script>
+    <script src="/global.js"></script>
+    <script src="/Components/product.js"></script>
+    <script>
+        let img = [
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679865/bathroom-01_d4cdsl_yjuix2.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679864/bathroom-06_k4y53u_z87sa0.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679864/bathroom-02_s3ihvy_rsnh5h.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679864/bathroom-03_dvuqmj_prjopi.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679864/bathroom-05_hnzsrl_deogqy.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679863/bathroom-04_fizxij_qswe3e.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679863/bathroom-07_cnotoi_liha0f.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679862/bathroom-08_jn7oaj_tlpucc.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679862/bathroom-10_fovppq_esston.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679862/bathroom-09_ehtiaw_yjwkd6.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679861/bathroom-11_vlzzqz_e5xzh4.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679861/bathroom-12_t0psvt_hkdtop.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679861/bathroom-14_vohgck_ovvoxp.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679861/bathroom-13_ldjtzh_ewtqzg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679860/bathroom-15_x4vdpz_rbfkrz.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679860/bathroom-16_zcbxay_dmozlg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679859/bathroom-17_lg3g5l_o3hb32.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679859/bathroom-18_ezqpjo_grr9jy.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679859/bathroom-19_e8uy1v_neygi0.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679859/bathroom-20_z1gjco_zugkms.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679858/bathroom-21_dbmwot_rul3vr.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679858/bathroom-22_ctycbq_gy9y4b.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679857/bathroom-24_bfzapz_lot4ds.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679857/bathroom-25_lhejhm_zz9skw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679857/bathroom-23_ljmdxc_fdignl.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679856/bathroom-26_ypyhss_hhuhoz.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679856/bathroom-27_u76edn_fyv1zo.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679856/bathroom-28_oohx5c_h74mnd.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679855/bathroom-29_cj3uc8_xripem.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679855/bathroom-30_neuydn_osiulk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679854/bathroom-31_arn1rv_selw2s.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679853/bathroom-32_jwmi6s_ocodjv.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679853/bathroom-33_iunioy_oueypi.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679853/bathroom-35_jhc68m_md06rx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679852/bathroom-34_kyjyc0_hurr6u.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679852/bathroom-36_jnkij7_kszeof.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679852/bathroom-37_lg9fww_rxybe6.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679851/bathroom-38_lc8vwr_scdvl2.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679851/bathroom-39_zosqlz_tktjze.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679850/bathroom-40_nilrx8_ee1snn.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679850/bathroom-41_bhvbup_wcvwqf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679849/bathroom-42_afapzr_cyrkbn.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679849/bathroom-43_t0o2zd_twydcq.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679849/bathroom-44_q9cgbo_gia1cs.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679848/bathroom-45_dz6h2a_ajubqt.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679847/bathroom-46_uau2ol_g4eotw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679847/bathroom-48_mecyew_rtyy74.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679847/bathroom-47_xyh3u7_qf3qoj.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679846/bathroom-51_jfwebh_fnjxnf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679846/bathroom-49_cavbvc_kieqf2.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679846/bathroom-50_vwb5jo_oiylwd.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679845/bathroom-52_q6rj9r_ywxxoo.jpg",
+        ];
+        let product = document.getElementById("product")
+
+        // ---------------------------< Component called
+        product.insertAdjacentHTML("afterbegin", Product(
+            "Elegant Bathroom Gallery",
+            " Discover the Exquisite Luxury of Our Premium Designs ",
+            img))
+
+        // ---------------------------< GSAP Animation Code 
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let delayValue = () => {
+                return window.innerWidth < 768 ? 0 : 2;
+            };
+            let prtl = gsap.timeline()
+            prtl.from("#product-title, #product-desc, #product-scroll-down", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.4,
+                delay: delayValue,
+                toggleActions: "play reverse play reverse",
+            })
+
+
+
+            const races = document.querySelector(".races");
+            console.log(races.offsetWidth, window.innerWidth);
+
+            function getScrollAmount() {
+                let racesWidth = races.scrollWidth;
+                return -(racesWidth - window.innerWidth);
+            }
+            let sa = getScrollAmount();
+            // console.log(races.scrollwidth, sa)
+            const tween = gsap.to(races, {
+                x: getScrollAmount,
+                duration: 3,
+                ease: "none",
+                onUpdate: ScrollTrigger.update, // Ensure smooth updates
+            });
+
+            let startValue = () => {
+                return window.innerWidth < 768 ? "top 30%" : "top 15%";
+            };
+
+            ScrollTrigger.create({
+                trigger: ".racesWrapper",
+                start: startValue,
+                end: () => `-=${getScrollAmount()}`,
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                markers: false,
+            });
+            // Refresh ScrollTrigger and GSAP on resize for better responsiveness
+            window.addEventListener("resize", () => {
+                ScrollTrigger.refresh();
+            });
+
+
+ // Simulate loading process
+ let progress = 0;
+        const preloaderBar = document.getElementById("preloader-bar");
+        const preloaderText = document.getElementById("preloader-text");
+        const preloader = document.getElementById("preloader");
+
+        function updatePreloader() {
+            progress += Math.random() * 10; // Increment progress randomly
+
+            if (progress >= 100) {
+                progress = 100;
+                setTimeout(() => {
+                    preloader.style.display = "none"; // Hide preloader when loading is complete
+                }, 500); // Slight delay to allow users to see 100%
+            }
+
+            preloaderBar.style.width = `${progress}%`;
+            preloaderText.innerText = `${Math.floor(progress)}%`;
+
+            if (progress < 100) {
+                requestAnimationFrame(updatePreloader);
+            }
+        }
+
+        // Start preloader animation
+        requestAnimationFrame(updatePreloader);
+        })
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/global.css">
+    <title>Light Designs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body style="background-color: #1f1f1f; color: white" class="h-screen mx-auto max-w-[1440px] ">
+    
+     <!-- Preloader -->
+     <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <div class="text-center">
+            <div class="relative w-64 h-2 bg-gray-700 rounded-full overflow-hidden mb-4">
+                <div id="preloader-bar" class="absolute left-0 top-0 h-full bg-yellow-500"></div>
+            </div>
+            <div id="preloader-text" class="text-white text-lg">0%</div>
+        </div>
+    </div>
+
+
+    <section id="portfolio">
+        <div id="full-image" class="relative mb-5 ">
+            <img loading="eager" class=" w-full  h-auto object-contain md:h-screen md:object-cover "
+                src="https://res.cloudinary.com/daimmar0j/image/upload/v1721978604/chandelier-05_qss6ll.jpg" alt="">
+            <div
+                class="absolute bottom-0 flex justify-center items-center w-full backdrop-blur-sm bg-gradient-to-t  from-black/85 font-LibreBaskervilleRegular  text-2xl md:text-4xl py-5 ">
+                Lights </div>
+        </div>
+
+        <div id="title">
+            <div
+                class="font-LibreBaskervilleRegular text-2xl md:text-4xl  my-5 py-5 w-full flex justify-center items-center ">
+                Explore Lights </div>
+        </div>
+
+        <div id="grid">
+            <div class=" w-full my-5 py-5  md:mb-10 ">
+                <div class="grid sm:grid-cols-2 row-span-3 md:grid-cols-5 h-[100%] sm:gap-2  ">
+                    <div id="grid-image"
+                        class="relative overflow-hidden col-span-1 sm:col-span-2 md:col-span-2 md:row-span-3  h-full ">
+                        <a href="/product/chandelier.html" class="block relative overflow-hidden rounded-xl">
+
+                            <img loading="eager"
+                                class=" w-full h-full max-h-96 md:max-h-80 lg:max-h-96 object-cover rounded-xl grayscale hover:grayscale-0 hover:scale-110 ease-in-out duration-700 "
+                                src="https://res.cloudinary.com/daimmar0j/image/upload/v1721978621/chandelier-11_ywwpzo.jpg"
+                                alt="">
+                            <div
+                                class="absolute bottom-0 flex justify-center items-center w-full backdrop-blur-sm bg-gradient-to-t from-black  font-SourceSans3Regular text-xl  uppercase py-3 ">
+                                Chandeliers </div>
+                        </a>
+                    </div>
+
+
+                    <div id="grid-image-2"
+                        class="relative overflow-hidden col-span-1 sm:col-span-1 md:col-span-3 md:row-span-2 rounded-xl  ">
+                        <a href="/product/light.html" class="block relative overflow-hidden rounded-xl">
+                            <img loading="eager"
+                                class="w-full h-full max-h-96 object-cover rounded-xl grayscale hover:grayscale-0 hover:scale-110 ease-in-out duration-700"
+                                src="https://res.cloudinary.com/daimmar0j/image/upload/v1721976061/light-07_sjlx6k.jpg"
+                                alt="">
+                            <div
+                                class="absolute bottom-0 flex justify-center items-center w-full backdrop-blur-sm bg-gradient-to-t from-black text-white font-SourceSans3Regular text-base font-bold uppercase py-3 rounded-b-xl">
+                                Lights
+                            </div>
+                        </a>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </section>
+    </div>
+    <section id="whatsapp-floating-icon"></section>
+    <div id="cursor"
+        class=" h-10 w-10 bg-yellow-600 rounded-full flex justify-center items-center fixed top-0 left-0 z-50  cursor-none hidden text-[8px] text-center  px-2">
+        view more
+    </div>
+
+
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/Footer.js"></script>
+    <script src="/Components/whatsappFloatingIcon.js"></script>
+
+    <!-- GSAP Animation scripts -->
+    <script src="/media/JS/gsap.min.js"></script>
+    <script src="/media/JS/ScrollTrigger.min.js"></script>
+
+    <!-- <script src="/Components/pfHead.js"></script> -->
+    <script src="/Components/pfBody.js"></script>
+    <script src="/global.js"></script>
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.from("#full-image", {
+                delay: 1,
+                opacity: 0,
+                duration: 0.5,
+                y: 100
+            })
+
+
+            gsap.from("#title", {
+                opacity: 0,
+                duration: 0.5,
+                markers: false,
+                y: 100,
+                // toggleActions: "play reverse play reverse",
+                scrollTrigger: {
+                    trigger: "#title",
+                    scroller: "body",
+                    start: "top 40%",
+                    end: "top 0%",
+                }
+            })
+
+
+            let row1 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#grid-image",
+                    scroller: "body",
+                    markers: false,
+                    // scrub: true,
+                    start: "top 60%",
+                    end: "top -50%",
+                    // toggleActions: "play reverse play reverse",
+                },
+            });
+            row1.from("#grid-image, #grid-image-2", {
+                opacity: 0,
+                y: 100,
+                duration: 0.5,
+                stagger: 0.5,
+            })
+
+            let row2 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#grid-image-3",
+                    scroller: "body",
+                    markers: false,
+                    // scrub: true,
+                    start: "top 60%",
+                    end: "top -100%",
+                    // toggleActions: "play reverse play reverse",
+                },
+            });
+            row2.from("#grid-image-3, #grid-image-4", {
+                opacity: 0,
+                y: 100,
+                duration: 0.5,
+                stagger: 0.5,
+
+            })
+
+
+ // Simulate loading process
+ let progress = 0;
+        const preloaderBar = document.getElementById("preloader-bar");
+        const preloaderText = document.getElementById("preloader-text");
+        const preloader = document.getElementById("preloader");
+
+        function updatePreloader() {
+            progress += Math.random() * 10; // Increment progress randomly
+
+            if (progress >= 100) {
+                progress = 100;
+                setTimeout(() => {
+                    preloader.style.display = "none"; // Hide preloader when loading is complete
+                }, 500); // Slight delay to allow users to see 100%
+            }
+
+            preloaderBar.style.width = `${progress}%`;
+            preloaderText.innerText = `${Math.floor(progress)}%`;
+
+            if (progress < 100) {
+                requestAnimationFrame(updatePreloader);
+            }
+        }
+
+        // Start preloader animation
+        requestAnimationFrame(updatePreloader);
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/global.css">
+    <title>Sauna Designs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+        body {
+            margin: 0;
+            background: #15151e;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+     <!-- Preloader -->
+     <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <div class="text-center">
+            <div class="relative w-64 h-2 bg-gray-700 rounded-full overflow-hidden mb-4">
+                <div id="preloader-bar" class="absolute left-0 top-0 h-full bg-yellow-500"></div>
+            </div>
+            <div id="preloader-text" class="text-white text-lg">0%</div>
+        </div>
+    </div>
+
+
+    <section id="product"></section>
+    <section id="whatsapp-floating-icon"></section>
+
+
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/Footer.js"></script>
+    <script src="/Components/whatsappFloatingIcon.js"></script>
+
+    <!-- GSAP Animation scripts -->
+    <script src="/media/JS/gsap.min.js"></script>
+    <script src="/media/JS/ScrollTrigger.min.js"></script>
+    <script src="/global.js"></script>
+    <script src="/Components/product.js"></script>
+    <script>
+        let img = [
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677294/sauna-01_rlwss9_zd8dna.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677292/sauna-02_bzaqma_qwnshf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677290/sauna-03_opixpg_ol2mi3.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677289/sauna-04_ampdyl_q132mc.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677288/sauna-05_n0gcem_hxensc.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677286/sauna-06_d6ylu6_ro6ty4.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677285/sauna-07_e2udsc_xwax7c.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677283/sauna-08_fai5wp_etbthm.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677282/sauna-09_aocpn6_bdrsse.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677280/sauna-10_h2oddy_qkjiqg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677279/sauna-11_ywx30d_avzcka.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677277/sauna-12_zqvksi_u3jiv0.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677275/sauna-13_cihhzy_gjkgxs.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677274/sauna-14_vjk7ne_jvmdfb.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677273/sauna-15_yelhih_hvllld.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677271/sauna-16_rfihye_nhjh6j.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677270/sauna-17_paobwu_oyec9z.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677268/sauna-18_b62p6i_zimqkk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677266/sauna-19_l31r0f_u9ejnp.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677265/sauna-20_ri378n_ck98o7.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677263/sauna-21_iagqnq_jgf7ch.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677261/sauna-22_etvtei_w4dcin.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677259/sauna-23_ckb7ed_cwhj9f.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677258/sauna-24_vav3ry_d63e9y.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677256/sauna-25_k6uy1d_y4z9lf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677255/sauna-26_pccq2b_jomaaf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677253/sauna-27_uzegmh_yt8yye.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677252/sauna-28_kwjdst_h8q4tm.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677249/sauna-29_uqy1al_dul1vx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677248/sauna-30_wrisee_psgwd6.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677246/sauna-31_rlmem0_yock6d.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677244/sauna-32_oig1hg_dj6myp.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677242/sauna-33_txaqfh_m0cnby.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677241/sauna-34_ldjdyf_zblsqp.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677239/sauna-35_zamp1e_pb5m5s.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677237/sauna-36_g2rlrn_eisuca.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677236/sauna-37_er0a7u_ppc4qa.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677234/sauna-38_tzuw3k_nraklm.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677232/sauna-39_jj0gzt_b2w3cw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677231/sauna-40_pcudzg_btvsej.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677229/sauna-41_yfetnv_o3avhc.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677227/sauna-42_guzmh4_sjndjt.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677225/sauna-43_hcm5j0_b8jzht.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677224/sauna-44_yghwat_rtsmgh.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677222/sauna-45_zokapi_v0tp7t.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677220/sauna-46_kso8gj_xwtfnh.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677218/sauna-47_ixmfei_rtmsaw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677217/sauna-48_gwa2we_ehuvob.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677215/sauna-49_ey1grd_vq18y9.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677214/sauna-50_lu7aga_nq5jwj.jpg",
+        ];
+        let product = document.getElementById("product")
+
+        // ---------------------------< Component called
+        product.insertAdjacentHTML("afterbegin", Product(
+            "Elegant Sauna Gallery",
+            " Discover the Exquisite Luxury of Our Premium Designs ",
+            img))
+
+        // ---------------------------< GSAP Animation Code 
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let delayValue = () => {
+                return window.innerWidth < 768 ? 0 : 2;
+            };
+            let prtl = gsap.timeline()
+            prtl.from("#product-title, #product-desc, #product-scroll-down", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.4,
+                delay: delayValue,
+                toggleActions: "play reverse play reverse",
+            })
+
+
+
+            const races = document.querySelector(".races");
+            console.log(races.offsetWidth, window.innerWidth);
+
+            function getScrollAmount() {
+                let racesWidth = races.scrollWidth;
+                return -(racesWidth - window.innerWidth);
+            }
+            let sa = getScrollAmount();
+            // console.log(races.scrollwidth, sa)
+            const tween = gsap.to(races, {
+                x: getScrollAmount,
+                duration: 3,
+                ease: "none",
+                onUpdate: ScrollTrigger.update, // Ensure smooth updates
+            });
+
+            let startValue = () => {
+                return window.innerWidth < 768 ? "top 30%" : "top 15%";
+            };
+
+            ScrollTrigger.create({
+                trigger: ".racesWrapper",
+                start: startValue,
+                end: () => `-=${getScrollAmount()}`,
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                markers: false,
+            });
+            // Refresh ScrollTrigger and GSAP on resize for better responsiveness
+            window.addEventListener("resize", () => {
+                ScrollTrigger.refresh();
+            });
+
+ // Simulate loading process
+ let progress = 0;
+        const preloaderBar = document.getElementById("preloader-bar");
+        const preloaderText = document.getElementById("preloader-text");
+        const preloader = document.getElementById("preloader");
+
+        function updatePreloader() {
+            progress += Math.random() * 10; // Increment progress randomly
+
+            if (progress >= 100) {
+                progress = 100;
+                setTimeout(() => {
+                    preloader.style.display = "none"; // Hide preloader when loading is complete
+                }, 500); // Slight delay to allow users to see 100%
+            }
+
+            preloaderBar.style.width = `${progress}%`;
+            preloaderText.innerText = `${Math.floor(progress)}%`;
+
+            if (progress < 100) {
+                requestAnimationFrame(updatePreloader);
+            }
+        }
+
+        // Start preloader animation
+        requestAnimationFrame(updatePreloader);
+        })
+    </script>
+
+
+</body>
+
+</html>

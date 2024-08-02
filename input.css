@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* font pairing 1  */
+    @font-face {
+        font-family: "Abril-Fatface";
+        font-style: normal;
+        font-display: swap;
+        src: url(/media/fonts/AbrilFatface-Regular.ttf) format("woff2");
+    }
+    @font-face {
+        font-family: "Cormorant";
+        font-style: normal;
+        font-display: swap;
+        src: url(/media/fonts/CormorantGaramond-Regular.ttf) format("woff2");
+    }
+
+    /* Font Pairing 2 */
+    @font-face {
+        font-family: "Playfair-Display";
+        font-style: normal;
+        font-display: swap;
+        src: url(/media/fonts/PlayfairDisplay-BoldItalic.ttf) format("woff2");
+    }
+    @font-face {
+        font-family: "Raleway";
+        font-style: normal;
+        font-display: swap;
+        src: url(/media/fonts/Raleway-Light.ttf) format("woff2");
+    }
+
+    /* Font Pairing 3 */
+    @font-face {
+        font-family: "Montagu-Slab";
+        font-style: normal;
+        font-display: swap;
+        src: url(/media/fonts/MontaguSlab_48pt-Medium.ttf) format("woff2");
+    }
+    @font-face {
+        font-family: "Figtree-Medium";
+        font-style: normal;
+        font-display: swap;
+        src: url(/media/fonts/Figtree-Medium.ttf) format("woff2");
+    }
+    @font-face {
+        font-family: "Figtree-Bold";
+        font-style: normal;
+        font-display: swap;
+        src: url(/media/fonts/Figtree-Bold.ttf) format("woff2");
+    }
+
+    @font-face {
+        font-family: "LibreBaskerville-Regular";
+        font-style: normal;
+        font-display: swap;
+        src: url(/media/fonts/Roboto_Condensed/RobotoCondensed-VariableFont_wght.ttf);
+    }
+    @font-face {
+        font-family: "LibreBaskerville-Bold";
+        font-style: normal;
+        font-display: swap;
+        src: url(/media/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf);
+    }
+    @font-face {
+        font-family: "SourceSans3-Regular";
+        font-style: normal;
+        font-display: swap;
+        src: url(/media/fonts/Roboto/Roboto-Light.ttf);
+    }
+}

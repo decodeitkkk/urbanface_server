@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/global.css">
+    <title>Chairs Designs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+        body {
+            margin: 0;
+            background: #15151e;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+     <!-- Preloader -->
+     <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <div class="text-center">
+            <div class="relative w-64 h-2 bg-gray-700 rounded-full overflow-hidden mb-4">
+                <div id="preloader-bar" class="absolute left-0 top-0 h-full bg-yellow-500"></div>
+            </div>
+            <div id="preloader-text" class="text-white text-lg">0%</div>
+        </div>
+    </div>
+
+
+    <section id="product"></section>
+    <section id="whatsapp-floating-icon"></section>
+
+
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/Footer.js"></script>
+    <script src="/Components/whatsappFloatingIcon.js"></script>
+
+    <!-- GSAP Animation scripts -->
+    <script src="/media/JS/gsap.min.js"></script>
+    <script src="/media/JS/ScrollTrigger.min.js"></script>
+    <script src="/global.js"></script>
+    <script src="/Components/product.js"></script>
+    <script>
+        let img = [
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675862/chair-01_xhcvqk_lelybu.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675862/chair-02_uqfuyk_tjhr2r.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675861/chair-03_myvi0w_qyn7vc.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675861/chair-04_msamfk_btsphw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675861/chair-05_rpilv0_umqygy.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675861/chair-06_gbgizy_ljxyvj.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675859/chair-07_mazop9_w5ydqc.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675859/chair-08_l7dc13_fqkfuw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675858/chair-09_jyftii_p8undy.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675857/chair-10_qypjmt_xzk92m.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675856/chair-11_u5bmy9_xponon.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675856/chair-13_dqowgp_yaw5w2.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675855/chair-14_wuwqhc_zzbycj.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675854/chair-15_m8myh0_cuegog.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675854/chair-16_mrtwjp_utebnd.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675853/chair-17_ydurv6_rklhcs.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675852/chair-18_yobp7a_ilbkwh.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675852/chair-19_rgn0t9_a1bwp6.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675851/chair-20_osuptw_dqhfii.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675851/chair-21_jxmubd_egcqpv.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675851/chair-22_mdppzr_jikxbg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675850/chair-23_jcrjq9_faykzs.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675850/chair-24_gmufz7_lzvzmo.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675849/chair-25_drnhnx_a3jp34.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675848/chair-26_hwllix_fgrlxk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675848/chair-27_ohrxky_bzehol.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675847/chair-29_j7dccx_y2jfdd.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675847/chair-28_rwyhzy_tou3fz.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675847/chair-30_gxrwnd_w5ddjw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675846/chair-31_j164rn_it5lo8.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675845/chair-32_ixsoit_yghdxz.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675844/chair-33_chunhk_oxlat8.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675843/chair-34_gtyuuw_e6l7vy.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675843/chair-36_qypc32_uxgseo.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675842/chair-35_q0im5y_kiklx1.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675842/chair-37_vz7zir_q0runk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675838/chair-38_gkwwfb_zdqjjv.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675838/chair-39_soreth_loaers.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675837/chair-41_m3mgxw_fkmfyw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675837/chair-40_pqoydc_n0hjov.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675837/chair-42_rlp6gq_wbfcpz.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675836/chair-43_vhma3s_rd1nvg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721675836/chair-44_tlqzgl_rbf4s2.jpg",
+        ];
+        let product = document.getElementById("product")
+
+        // ---------------------------< Component called
+        product.insertAdjacentHTML("afterbegin", Product(
+            "Elegant Chair Gallery",
+            " Discover the Exquisite Luxury of Our Premium Designs ",
+            img))
+
+        // ---------------------------< GSAP Animation Code 
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let delayValue = () => {
+                return window.innerWidth < 768 ? 0 : 2;
+            };
+            let prtl = gsap.timeline()
+            prtl.from("#product-title, #product-desc, #product-scroll-down", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.4,
+                delay: delayValue,
+                toggleActions: "play reverse play reverse",
+            })
+
+
+
+            const races = document.querySelector(".races");
+            console.log(races.offsetWidth, window.innerWidth);
+
+            function getScrollAmount() {
+                let racesWidth = races.scrollWidth;
+                return -(racesWidth - window.innerWidth);
+            }
+            let sa = getScrollAmount();
+            // console.log(races.scrollwidth, sa)
+            const tween = gsap.to(races, {
+                x: getScrollAmount,
+                duration: 3,
+                ease: "none",
+                onUpdate: ScrollTrigger.update, // Ensure smooth updates
+            });
+
+            let startValue = () => {
+                return window.innerWidth < 768 ? "top 30%" : "top 15%";
+            };
+
+            ScrollTrigger.create({
+                trigger: ".racesWrapper",
+                start: startValue,
+                end: () => `-=${getScrollAmount()}`,
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                markers: false,
+            });
+            // Refresh ScrollTrigger and GSAP on resize for better responsiveness
+            window.addEventListener("resize", () => {
+                ScrollTrigger.refresh();
+            });
+
+
+ // Simulate loading process
+ let progress = 0;
+        const preloaderBar = document.getElementById("preloader-bar");
+        const preloaderText = document.getElementById("preloader-text");
+        const preloader = document.getElementById("preloader");
+
+        function updatePreloader() {
+            progress += Math.random() * 10; // Increment progress randomly
+
+            if (progress >= 100) {
+                progress = 100;
+                setTimeout(() => {
+                    preloader.style.display = "none"; // Hide preloader when loading is complete
+                }, 500); // Slight delay to allow users to see 100%
+            }
+
+            preloaderBar.style.width = `${progress}%`;
+            preloaderText.innerText = `${Math.floor(progress)}%`;
+
+            if (progress < 100) {
+                requestAnimationFrame(updatePreloader);
+            }
+        }
+
+        // Start preloader animation
+        requestAnimationFrame(updatePreloader);
+        })
+    </script>
+
+
+</body>
+
+</html>

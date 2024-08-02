@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/global.css">
+    <title>Sculpture Designs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+        body {
+            margin: 0;
+            background: #15151e;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+     <!-- Preloader -->
+     <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <div class="text-center">
+            <div class="relative w-64 h-2 bg-gray-700 rounded-full overflow-hidden mb-4">
+                <div id="preloader-bar" class="absolute left-0 top-0 h-full bg-yellow-500"></div>
+            </div>
+            <div id="preloader-text" class="text-white text-lg">0%</div>
+        </div>
+    </div>
+
+
+    <section id="product"></section>
+    <section id="whatsapp-floating-icon"></section>
+
+
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/Footer.js"></script>
+    <script src="/Components/whatsappFloatingIcon.js"></script>
+
+    <!-- GSAP Animation scripts -->
+    <script src="/media/JS/gsap.min.js"></script>
+    <script src="/media/JS/ScrollTrigger.min.js"></script>
+    <script src="/global.js"></script>
+    <script src="/Components/product.js"></script>
+    <script>
+        let img = [
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677599/statue-01_dfv6qn_iyhctd.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677597/statue-02_gauxxb_fwsq30.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677595/statue-03_rhhodr_lpw5sn.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677594/statue-04_nltid7_zdcels.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677592/statue-05_z7m2te_tpr4bx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677591/statue-06_in6mdi_gpopxl.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677590/statue-07_zgbsft_ban5yu.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677588/statue-08_lakczr_rzsysg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677586/statue-09_thnmho_pl7kok.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721677585/statue-10_s0awzs_fcd7ct.jpg",
+
+
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679832/artwork-01_jlalsu_ygxnic.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679831/artwork-02_eoauod_ivywjt.jpg",
+            // "http://res.cloudinary.com/daimmar0j/image/upload/v1721679831/artwork-03_cx5sx8_frfwhk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679830/artwork-04_wjaetc_fbnnbx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679830/artwork-05_fzazwy_pozos1.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679830/artwork-06_go9fby_mnwdkd.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679829/artwork-07_kectpd_kjexcb.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679829/artwork-10_x0bt1t_letqqp.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679829/artwork-08_pzicwu_dfjmxb.jpg",
+            // "http://res.cloudinary.com/daimmar0j/image/upload/v1721679829/artwork-11_k87xq3_nizili.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679829/artwork-09_mvquvs_bz7fpa.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679828/artwork-12_wfydkk_r1ytah.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679828/artwork-13_ev5zry_opo0e4.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679828/artwork-19_b7d2oi_amx39o.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679827/artwork-14_jnybx9_sb2i3c.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679827/artwork-15_niummd_fp6qgu.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679827/artwork-16_a9mvw1_hdne9k.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679826/artwork-17_qoge3o_jsxnyx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679825/artwork-18_sopoqb_ntsc2s.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679825/artwork-20_mvctwp_bxlib5.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679825/artwork-21_cthyio_aihpg3.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679824/artwork-22_bodnzo_bxr5l3.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679824/artwork-23_u5qpuw_uw39ku.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679824/artwork-24_xgangg_u8ibyd.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679824/artwork-25_efy7on_z6npvm.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679824/artwork-27_jrze2x_gcybng.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679824/artwork-30_lve4pv_pvgyix.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679823/artwork-26_lomcg3_zraeac.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679823/artwork-28_aafn1k_r8felb.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679823/artwork-29_tfxgch_ebc9fi.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679822/artwork-31_aaoija_l64gsz.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679822/artwork-32_r4fmqp_xb4lap.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679822/artwork-33_rdngcc_vruj87.jpg",
+            // "http://res.cloudinary.com/daimmar0j/image/upload/v1721679821/artwork.-34_gb7wbb_yu3oyw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679821/artwork-35_db3wm6_yzo05n.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679820/artwork-37_a2mm12_umqq7y.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679820/artwork-36_qquhyi_vjrrvb.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679820/artwork-38_hj5yty_nsz9xo.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679819/artwork-39_akkknc_tj9rju.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679819/artwork-40_mtj2kr_prukle.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679819/artwork-44_ssy3kw_givnt9.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679819/artwork-42_cj6wl5_hjmgqo.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679819/artwork-41_ijqw3f_gkgkp9.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679818/artwork-43_jet2wh_zotgkg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679818/artwork-45_wfxvbg_myaip8.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679817/artwork-49_weqacn_tj7dmz.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679817/artwork-46_fz5x1w_mn8c69.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679817/artwork-47_jwrkxs_m5vbgd.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679817/artwork-48_mjswjp_zmadd7.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679816/artwork-50_jsauwj_dsqupg.jpg",
+
+
+        ];
+        let product = document.getElementById("product")
+
+        // ---------------------------< Component called
+        product.insertAdjacentHTML("afterbegin", Product(
+            "Elegant Sculpture Gallery",
+            " Discover the Exquisite Luxury of Our Premium Designs ",
+            img))
+
+        // ---------------------------< GSAP Animation Code 
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let delayValue = () => {
+                return window.innerWidth < 768 ? 0 : 2;
+            };
+            let prtl = gsap.timeline()
+            prtl.from("#product-title, #product-desc, #product-scroll-down", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.4,
+                delay: delayValue,
+                toggleActions: "play reverse play reverse",
+            })
+
+
+
+            const races = document.querySelector(".races");
+            console.log(races.offsetWidth, window.innerWidth);
+
+            function getScrollAmount() {
+                let racesWidth = races.scrollWidth;
+                return -(racesWidth - window.innerWidth);
+            }
+            let sa = getScrollAmount();
+            // console.log(races.scrollwidth, sa)
+            const tween = gsap.to(races, {
+                x: getScrollAmount,
+                duration: 3,
+                ease: "none",
+                onUpdate: ScrollTrigger.update, // Ensure smooth updates
+            });
+
+            let startValue = () => {
+                return window.innerWidth < 768 ? "top 30%" : "top 15%";
+            };
+
+            ScrollTrigger.create({
+                trigger: ".racesWrapper",
+                start: startValue,
+                end: () => `-=${getScrollAmount()}`,
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                markers: false,
+            });
+            // Refresh ScrollTrigger and GSAP on resize for better responsiveness
+            window.addEventListener("resize", () => {
+                ScrollTrigger.refresh();
+            });
+
+ // Simulate loading process
+ let progress = 0;
+        const preloaderBar = document.getElementById("preloader-bar");
+        const preloaderText = document.getElementById("preloader-text");
+        const preloader = document.getElementById("preloader");
+
+        function updatePreloader() {
+            progress += Math.random() * 10; // Increment progress randomly
+
+            if (progress >= 100) {
+                progress = 100;
+                setTimeout(() => {
+                    preloader.style.display = "none"; // Hide preloader when loading is complete
+                }, 500); // Slight delay to allow users to see 100%
+            }
+
+            preloaderBar.style.width = `${progress}%`;
+            preloaderText.innerText = `${Math.floor(progress)}%`;
+
+            if (progress < 100) {
+                requestAnimationFrame(updatePreloader);
+            }
+        }
+
+        // Start preloader animation
+        requestAnimationFrame(updatePreloader);
+        })
+    </script>
+
+
+</body>
+
+</html>

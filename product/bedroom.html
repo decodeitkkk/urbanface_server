@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/global.css">
+    <title>Bedroom Designs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+        body {
+            margin: 0;
+            background: #15151e;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+ <!-- Preloader -->
+ <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+    <div class="text-center">
+        <div class="relative w-64 h-2 bg-gray-700 rounded-full overflow-hidden mb-4">
+            <div id="preloader-bar" class="absolute left-0 top-0 h-full bg-yellow-500"></div>
+        </div>
+        <div id="preloader-text" class="text-white text-lg">0%</div>
+    </div>
+</div>
+
+
+
+    <section id="product"></section>
+    <section id="whatsapp-floating-icon"></section>
+
+
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/Footer.js"></script>
+    <script src="/Components/whatsappFloatingIcon.js"></script>
+
+    <!-- GSAP Animation scripts -->
+    <script src="/media/JS/gsap.min.js"></script>
+    <script src="/media/JS/ScrollTrigger.min.js"></script>
+    <script src="/global.js"></script>
+    <script src="/Components/product.js"></script>
+    <script>
+        let img = [
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679938/bedroom-01_upb9p8_zok6oi.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679937/bedroom-02_bktmjw_lgjpdz.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679936/bedroom-03_xhbmrn_kerbpy.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679933/bedroom-04_a0mzkk_bwfozh.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679932/bedroom-05_ghpdb5_obqwa1.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679932/bedroom-06_ukjvfa_nlerr7.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679931/bedroom-07_dadlnr_rfg4se.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679931/bedroom-08_ezof6s_ln0z7l.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679929/bedroom-09_gdijhk_f0uzw3.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679927/bedroom-10_ntnrz6_cjjwbo.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679925/bedroom-14_xldgzb_hhdxdw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679925/bedroom-11_nj8nei_qxkktk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679924/bedroom-12_kg6geb_w2869r.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679924/bedroom-15_gm7obm_zuhpcg.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679924/bedroom-13_sqrhef_ywi0i6.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679920/bedroom-16_pn0bhk_wunzwx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679920/bedroom-23_lewjan_m7qvny.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679919/bedroom-17_fhwlcy_s4qrqf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679918/bedroom-18_swgpru_zebm6t.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679918/bedroom-19_ztdce1_eft9bl.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679917/bedroom-20_uii1da_ncyqwx.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679915/bedroom-21_wi1hpm_k5yxqd.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679914/bedroom-24_erlomq_bvq7mb.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679914/bedroom-22_mxk5cm_geb3kp.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679913/bedroom-25_szdhwr_i7j3ew.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679913/bedroom-26_v9btd1_nf0205.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679913/bedroom-27_lpocv3_qmcupv.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679912/bedroom-30_sn2nf7_ye7qgk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679912/bedroom-28_uqd29c_zqaplf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721679911/bedroom-29_mp1a85_ajmwxv.jpg",
+
+        ];
+        let product = document.getElementById("product")
+
+        // ---------------------------< Component called
+        product.insertAdjacentHTML("afterbegin", Product(
+            "Elegant Bedroom Gallery",
+            " Discover the Exquisite Luxury of Our Premium Designs ",
+            img))
+
+        // ---------------------------< GSAP Animation Code 
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let delayValue = () => {
+                return window.innerWidth < 768 ? 0 : 2;
+            };
+            let prtl = gsap.timeline()
+            prtl.from("#product-title, #product-desc, #product-scroll-down", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.4,
+                delay: delayValue,
+                toggleActions: "play reverse play reverse",
+            })
+
+
+
+            const races = document.querySelector(".races");
+            console.log(races.offsetWidth, window.innerWidth);
+
+            function getScrollAmount() {
+                let racesWidth = races.scrollWidth;
+                return -(racesWidth - window.innerWidth);
+            }
+            let sa = getScrollAmount();
+            // console.log(races.scrollwidth, sa)
+            const tween = gsap.to(races, {
+                x: getScrollAmount,
+                duration: 3,
+                ease: "none",
+                onUpdate: ScrollTrigger.update, // Ensure smooth updates
+            });
+
+            let startValue = () => {
+                return window.innerWidth < 768 ? "top 30%" : "top 15%";
+            };
+
+            ScrollTrigger.create({
+                trigger: ".racesWrapper",
+                start: startValue,
+                end: () => `-=${getScrollAmount()}`,
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                markers: false,
+            });
+            // Refresh ScrollTrigger and GSAP on resize for better responsiveness
+            window.addEventListener("resize", () => {
+                ScrollTrigger.refresh();
+            });
+
+
+
+ // Simulate loading process
+ let progress = 0;
+        const preloaderBar = document.getElementById("preloader-bar");
+        const preloaderText = document.getElementById("preloader-text");
+        const preloader = document.getElementById("preloader");
+
+        function updatePreloader() {
+            progress += Math.random() * 10; // Increment progress randomly
+
+            if (progress >= 100) {
+                progress = 100;
+                setTimeout(() => {
+                    preloader.style.display = "none"; // Hide preloader when loading is complete
+                }, 500); // Slight delay to allow users to see 100%
+            }
+
+            preloaderBar.style.width = `${progress}%`;
+            preloaderText.innerText = `${Math.floor(progress)}%`;
+
+            if (progress < 100) {
+                requestAnimationFrame(updatePreloader);
+            }
+        }
+
+        // Start preloader animation
+        requestAnimationFrame(updatePreloader);
+        })
+    </script>
+
+
+</body>
+
+</html>

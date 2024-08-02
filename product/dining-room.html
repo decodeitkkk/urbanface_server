@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/global.css">
+    <title>Dining Room Designs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+        body {
+            margin: 0;
+            background: #15151e;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+     <!-- Preloader -->
+     <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <div class="text-center">
+            <div class="relative w-64 h-2 bg-gray-700 rounded-full overflow-hidden mb-4">
+                <div id="preloader-bar" class="absolute left-0 top-0 h-full bg-yellow-500"></div>
+            </div>
+            <div id="preloader-text" class="text-white text-lg">0%</div>
+        </div>
+    </div>
+
+    <section id="product"></section>
+    <section id="whatsapp-floating-icon"></section>
+
+
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/Footer.js"></script>
+    <script src="/Components/whatsappFloatingIcon.js"></script>
+
+    <!-- GSAP Animation scripts -->
+    <script src="/media/JS/gsap.min.js"></script>
+    <script src="/media/JS/ScrollTrigger.min.js"></script>
+    <script src="/global.js"></script>
+    <script src="/Components/product.js"></script>
+    <script>
+        let img = [
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676294/dining-01_hmycul_mvqzok.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676292/dining-02_mwxrvq_qhllyl.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676291/dining-03_k3v5vk_yfefo8.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676290/dining-04_grg5k3_w1kwno.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676289/dining-05_j2jria_ofwdwf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676288/dining-06_ourjsr_mbrb1s.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676287/dining-07_xq3uqo_lttuuq.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676286/dining-08_rwn8hu_jcirzj.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676285/dining-09_mbzcm4_synrj1.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676284/dining-10_tja1g3_j14aap.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676282/dining-11_jwpzqd_a6hqea.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676281/dining-12_unlfyb_pfdn3x.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676280/dining-13_tfqrjl_tfxbgl.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676278/dining-14_ql8tlg_wezrqn.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676277/dining-15_zhhirm_kxfzyf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676277/dining-16_lkbf2w_vybiv4.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676276/dining-17_flpxhf_wsze5s.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676274/dining-18_r9qi79_potbah.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676273/dining-20_wl1cdv_wjclg6.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676272/dining-21_bjzcfm_nttpnw.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676271/dining-22_fm29qs_qfrgde.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676269/dining-23_wtnd6m_rgxvxo.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676267/dining-24_vodnfj_oxkqud.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676266/dining-25_fvttgz_klkwno.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676265/dining-26_mq02cz_j4orsc.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676264/dining-27_mxemfh_t4b1on.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676263/dining-28_nbahkc_ivzsfp.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676262/dining-29_vtl20k_udcehp.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676260/dining-30_thiqon_tnsdl1.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676259/dining-31_qsxu9g_puwvag.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676256/dining-32_lsephn_wrtglk.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676255/dining-33_wb54he_mgcdnf.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676254/dining-34_pzbjww_s2pshh.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676253/dining-35_xnx4lo_sztazi.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676252/dining-36_tntg7t_aotiva.jpg",
+            "http://res.cloudinary.com/daimmar0j/image/upload/v1721676252/dining-37_s3i49o_sxud39.jpg",
+        ];
+        let product = document.getElementById("product")
+
+        // ---------------------------< Component called
+        product.insertAdjacentHTML("afterbegin", Product(
+            "Elegant Dining Room Gallery",
+            " Discover the Exquisite Luxury of Our Premium Designs ",
+            img))
+
+        // ---------------------------< GSAP Animation Code 
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let delayValue = () => {
+                return window.innerWidth < 768 ? 0 : 2;
+            };
+            let prtl = gsap.timeline()
+            prtl.from("#product-title, #product-desc, #product-scroll-down", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.4,
+                delay: delayValue,
+                toggleActions: "play reverse play reverse",
+            })
+
+
+
+            const races = document.querySelector(".races");
+            console.log(races.offsetWidth, window.innerWidth);
+
+            function getScrollAmount() {
+                let racesWidth = races.scrollWidth;
+                return -(racesWidth - window.innerWidth);
+            }
+            let sa = getScrollAmount();
+            // console.log(races.scrollwidth, sa)
+            const tween = gsap.to(races, {
+                x: getScrollAmount,
+                duration: 3,
+                ease: "none",
+                onUpdate: ScrollTrigger.update, // Ensure smooth updates
+            });
+
+            let startValue = () => {
+                return window.innerWidth < 768 ? "top 30%" : "top 15%";
+            };
+
+            ScrollTrigger.create({
+                trigger: ".racesWrapper",
+                start: startValue,
+                end: () => `-=${getScrollAmount()}`,
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                markers: false,
+            });
+            // Refresh ScrollTrigger and GSAP on resize for better responsiveness
+            window.addEventListener("resize", () => {
+                ScrollTrigger.refresh();
+            });
+
+
+ // Simulate loading process
+ let progress = 0;
+        const preloaderBar = document.getElementById("preloader-bar");
+        const preloaderText = document.getElementById("preloader-text");
+        const preloader = document.getElementById("preloader");
+
+        function updatePreloader() {
+            progress += Math.random() * 10; // Increment progress randomly
+
+            if (progress >= 100) {
+                progress = 100;
+                setTimeout(() => {
+                    preloader.style.display = "none"; // Hide preloader when loading is complete
+                }, 500); // Slight delay to allow users to see 100%
+            }
+
+            preloaderBar.style.width = `${progress}%`;
+            preloaderText.innerText = `${Math.floor(progress)}%`;
+
+            if (progress < 100) {
+                requestAnimationFrame(updatePreloader);
+            }
+        }
+
+        // Start preloader animation
+        requestAnimationFrame(updatePreloader);
+        })
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+body {
+    /* max-width: 1440px; */
+    /* margin: auto; */
+}
+
+@keyframes pulseAnim {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    /* 	box-shadow: 2px 2px 3px #999; */
+    z-index: 100;
+}
+.pulse {
+    z-index: 0;
+    position: fixed;
+    content: "";
+    bottom: 35px;
+    right: 35px;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: #25d366;
+    animation-name: pulseAnim;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    z-index: 99;
+}
+.my-float {
+    margin-top: 16px;
+}
+
+.group:hover .group-hover\:block {
+    display: block;
+}
+
+#preloader {
+    background-color: #1f1f1f;
+}
+
+#preloader-bar {
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+#preloader-text {
+    font-family: "Source Sans Pro", sans-serif;
+}
