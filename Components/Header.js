@@ -85,7 +85,7 @@ let Header = `
     <div class="backdrop-blur text-white z-[999] fixed w-full lg:hidden">
         <ul class="flex flex-row justify-between items-center px-5">
             <li class="text-2xl uppercase py-2 h-10">
-                <a href="/index.html">
+                <a href="/">
                     <img loading="eager" class="h-full scale-125" src="https://res.cloudinary.com/daimmar0j/image/upload/v1721676892/logo_hd91rh_yg6ee7.png" alt="urbanface-logo" />
                 </a>
             </li>
@@ -101,7 +101,7 @@ let Header = `
 
     <div class="lg:flex-row backdrop-blur-sm lg:bg-gradient-to-b lg:from-black/85 fixed w-full z-20 text-white py-5 pl-10 pr-0 justify-between items-baseline hidden lg:flex ">
         <div id="logo-img" class="font-bold text-3xl h-9">
-            <a href="/index.html">
+            <a href="/">
                 <img loading="eager" class="h-full scale-125" src="https://res.cloudinary.com/daimmar0j/image/upload/v1721676892/logo_hd91rh_yg6ee7.png" alt="urbanface-logo" />
             </a>
         </div>
