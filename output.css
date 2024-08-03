@@ -449,60 +449,6 @@ video {
 /* font pairing 1  */
 
 @font-face {
-  font-family: "Abril-Fatface";
-
-  font-style: normal;
-
-  font-display: swap;
-
-  src: url(/media/fonts/AbrilFatface-Regular.ttf) format("woff2");
-}
-
-@font-face {
-  font-family: "Cormorant";
-
-  font-style: normal;
-
-  font-display: swap;
-
-  src: url(/media/fonts/CormorantGaramond-Regular.ttf) format("woff2");
-}
-
-/* Font Pairing 2 */
-
-@font-face {
-  font-family: "Playfair-Display";
-
-  font-style: normal;
-
-  font-display: swap;
-
-  src: url(/media/fonts/PlayfairDisplay-BoldItalic.ttf) format("woff2");
-}
-
-@font-face {
-  font-family: "Raleway";
-
-  font-style: normal;
-
-  font-display: swap;
-
-  src: url(/media/fonts/Raleway-Light.ttf) format("woff2");
-}
-
-/* Font Pairing 3 */
-
-@font-face {
-  font-family: "Montagu-Slab";
-
-  font-style: normal;
-
-  font-display: swap;
-
-  src: url(/media/fonts/MontaguSlab_48pt-Medium.ttf) format("woff2");
-}
-
-@font-face {
   font-family: "Figtree-Medium";
 
   font-style: normal;
@@ -513,13 +459,14 @@ video {
 }
 
 @font-face {
-  font-family: "Figtree-Bold";
+  font-family: "Playfair-Display";
 
   font-style: normal;
 
   font-display: swap;
 
-  src: url(/media/fonts/Figtree-Bold.ttf) format("woff2");
+  src: url(/media/fonts/PlayfairDisplay-BoldItalic.ttf)
+            format("woff2");
 }
 
 @font-face {
@@ -530,16 +477,6 @@ video {
   font-display: swap;
 
   src: url(/media/fonts/Roboto_Condensed/RobotoCondensed-VariableFont_wght.ttf);
-}
-
-@font-face {
-  font-family: "LibreBaskerville-Bold";
-
-  font-style: normal;
-
-  font-display: swap;
-
-  src: url(/media/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf);
 }
 
 @font-face {
@@ -1360,11 +1297,6 @@ video {
   background-color: rgb(133 77 14 / var(--tw-bg-opacity));
 }
 
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1607,20 +1539,12 @@ video {
   font-family: Figtree-Medium;
 }
 
-.font-LibreBaskervilleBold {
-  font-family: LibreBaskerville-Bold;
-}
-
 .font-LibreBaskervilleRegular {
   font-family: LibreBaskerville-Regular;
 }
 
 .font-PlayfairDisplay {
   font-family: Playfair-Display;
-}
-
-.font-Raleway {
-  font-family: Raleway;
 }
 
 .font-SourceSans3Regular {
@@ -1740,11 +1664,6 @@ video {
 .text-yellow-600 {
   --tw-text-opacity: 1;
   color: rgb(202 138 4 / var(--tw-text-opacity));
-}
-
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .underline {
