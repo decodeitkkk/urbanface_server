@@ -992,10 +992,6 @@ video {
   width: 8rem;
 }
 
-.w-40 {
-  width: 10rem;
-}
-
 .w-6 {
   width: 1.5rem;
 }
@@ -1140,10 +1136,10 @@ video {
        column-gap: 1.25rem;
 }
 
-.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+.space-x-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
-  margin-right: calc(2rem * var(--tw-space-x-reverse));
-  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  margin-right: calc(0px * var(--tw-space-x-reverse));
+  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1303,14 +1299,6 @@ video {
 
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
-}
-
-.bg-\[url\(\'\$\{headImg\}\'\)\] {
-  background-image: url('${headImg}');
-}
-
-.bg-\[url\(\'\$\{item\.image\}\'\)\] {
-  background-image: url('${item.image}');
 }
 
 .bg-\[url\(\'\/media\/ig\/architectural\/arch-05\.jpg\'\)\] {
@@ -1796,11 +1784,6 @@ video {
   color: rgb(79 70 229 / var(--tw-text-opacity));
 }
 
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .hover\:text-yellow-400:hover {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity));
@@ -1809,11 +1792,6 @@ video {
 .hover\:text-yellow-500:hover {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity));
-}
-
-.hover\:text-yellow-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(202 138 4 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {
@@ -1942,6 +1920,10 @@ video {
     width: 66.666667%;
   }
 
+  .sm\:w-40 {
+    width: 10rem;
+  }
+
   .sm\:w-44 {
     width: 11rem;
   }
@@ -2000,13 +1982,15 @@ video {
          column-gap: 0.5rem;
   }
 
+  .sm\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2rem * var(--tw-space-x-reverse));
+    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
   .sm\:bg-black {
     --tw-bg-opacity: 1;
     background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-  }
-
-  .sm\:bg-\[url\(\'\$\{item\.image\}\'\)\] {
-    background-image: url('${item.image}');
   }
 
   .sm\:bg-\[url\(\'\/media\/images\/02\.jpg\'\)\] {
@@ -2029,6 +2013,10 @@ video {
 
   .sm\:p-10 {
     padding: 2.5rem;
+  }
+
+  .sm\:p-5 {
+    padding: 1.25rem;
   }
 
   .sm\:px-10 {
