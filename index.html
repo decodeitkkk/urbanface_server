@@ -67,12 +67,11 @@
                25+ Years of Expertise and Customer Delight
            </div>
            <div id="home-content-desc" class="font-SourceSans3Regular text-lg md:text-2xl md:w-3/4 text-left my-4">
-               Welcome to Urban Face, your premier partner in global procurement and sourcing for luxurious residential
+               Welcome to Urbanface, your premier partner in global procurement and sourcing for luxurious residential
                and commercial projects. Specializing in sourcing high-quality furniture and décor from China and
                Europe, we provide tailored solutions to meet your unique needs. Our comprehensive services cover every
                aspect of sourcing, including customization options to ensure your vision is brought to life. We
-               prioritize client satisfaction, value your feedback, and offer robust post-delivery support. Trust Urban
-               Face to deliver exceptional quality and transform your spaces with unparalleled expertise and
+               prioritize client satisfaction, value your feedback, and offer robust post-delivery support. Trust Urbanface to deliver exceptional quality and transform your spaces with unparalleled expertise and
                dedication.
            </div>
        </div>
@@ -172,8 +171,6 @@
    <section id="whatsapp-floating-icon"></section>
 
 
-
-
    <script defer src="/Components/Header.js"></script>
    <script defer src="/Components/Footer.js"></script>
    <script defer src="/Components/contact.js"></script>
@@ -181,8 +178,8 @@
    <script defer src="/media/JS/gsap.min.js"></script>
    <script defer src="/media/JS/ScrollTrigger.min.js"></script>
    <script defer src="/particles.js"></script>
-   <script src="/screenfull.js"></script>
-   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+   
+   
    <script src="/global.js"></script>
 
 
@@ -191,13 +188,7 @@
            document.body.insertAdjacentHTML("afterbegin", Header);
            document.body.insertAdjacentHTML("beforeend", Footer);
 
-
            document.getElementById("whatsapp-floating-icon").insertAdjacentHTML("afterbegin", whatsappIcons);
-
-
-
-
-
 
            // navigation script
            let mob_header = document.querySelector("#mob_header");
@@ -211,18 +202,13 @@
                mob_header.classList.toggle("hidden");
            }, false);
 
-
            document.getElementById("contact").insertAdjacentHTML("afterbegin", Contact);
-
-
-
 
            // animated counter
            const counters = document.querySelectorAll('.counter');
            const options = {
                threshold: 0.5
            };
-
 
            const observer = new IntersectionObserver((entries) => {
                entries.forEach(entry => {
@@ -246,21 +232,9 @@
                });
            }, options);
 
-
            counters.forEach(counter => {
                observer.observe(counter);
            });
-
-
-
-
-
-
-
-
-
-
-
 
            // gsap animation
            gsap.registerPlugin(ScrollTrigger);
@@ -277,7 +251,6 @@
                scale: 0.5,
                ease: "none",
            });
-
 
            // particle JS
            particlesJS("particles-js", {
@@ -501,14 +474,10 @@
                retina_detect: true
            });
 
-
            // contact form configuration
            if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
                document.getElementById("contactForm").style.display = "none";
            }
-
-
-
 
            // Simulate loading process
            let progress = 0;
@@ -520,7 +489,6 @@
            function updatePreloader() {
                progress += Math.random() * 10; // Increment progress randomly
 
-
                if (progress >= 100) {
                    progress = 100;
                    setTimeout(() => {
@@ -528,24 +496,16 @@
                    }, 500); // Slight delay to allow users to see 100%
                }
 
-
                preloaderBar.style.width = `${progress}%`;
                preloaderText.innerText = `${Math.floor(progress)}%`;
-
 
                if (progress < 100) {
                    requestAnimationFrame(updatePreloader);
                }
            }
 
-
            // Start preloader animation
            requestAnimationFrame(updatePreloader);
-
-
-
-
-
 
        });
    </script>
